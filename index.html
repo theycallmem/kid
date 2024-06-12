@@ -1,1 +1,33 @@
-<object data="math-1.html" width="100%" height="100%"></object>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>019的空间</title>
+  </head>
+  <body>
+    <button id="m1">随机刷新</button>
+    <br />
+    <button id="m2">随机20道</button>
+
+    <script>
+      document.getElementById("m1").onclick = function () {
+        location.href = "math-1.html";
+      };
+
+      document.getElementById("m2").onclick = function () {
+        location.href = "math-2.html";
+      };
+    </script>
+
+    <style>
+      body {
+        margin-top: 100px;
+        text-align: center;
+      }
+
+      button {
+        font-size: 48px;
+        margin: 16px;
+      }
+    </style>
+  </body>
+</html>

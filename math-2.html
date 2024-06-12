@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>019的空间</title>
+  </head>
+  <body>
+    <div>
+      <ul id="math-list" style="list-style-type: none"></ul>
+    </div>
+
+    <script>
+      function getRandomIntInclusive(min, max) {
+        const minCeiled = Math.ceil(min);
+        const maxFloored = Math.floor(max);
+        return Math.floor(
+          Math.random() * (maxFloored - minCeiled + 1) + minCeiled
+        ); // The maximum is inclusive and the minimum is inclusive
+      }
+
+      for (var i = 1; i <= 20; i++) {
+        const x = getRandomIntInclusive(1, 20);
+        const y = getRandomIntInclusive(1, 20 - x);
+        const x1 = getRandomIntInclusive(1, 20);
+        const y1 = getRandomIntInclusive(1, x1 - 1);
+
+        const add = `${x} + ${y} = `;
+        const sub = `${x1} - ${y1} = `;
+
+        const pick = Math.floor(Math.random() * 2) === 1 ? add : sub;
+
+        const li = document.createElement("li");
+
+        li.innerHTML = `第${i}题: ${pick}`;
+
+        document.getElementById("math-list").appendChild(li);
+      }
+    </script>
+
+    <style>
+      body {
+        margin-top: 100px;
+        font-size: 36px;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+      }
+
+      ul {
+        text-align: left;
+      }
+    </style>
+  </body>
+</html>
