@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数学题</title>
+  </head>
+  <body>
+    <h1 class="big">数学题</h1>
+
+    <p id="item-1" class="big"></p>
+
+    <p id="item-2" class="big"></p>
+
+    <button id="reload" class="big"></button>
+
+    <script>
+      function getRandomIntInclusive(min, max) {
+        const minCeiled = Math.ceil(min);
+        const maxFloored = Math.floor(max);
+        return Math.floor(
+          Math.random() * (maxFloored - minCeiled + 1) + minCeiled
+        ); // The maximum is inclusive and the minimum is inclusive
+      }
+
+      const x = getRandomIntInclusive(1, 20);
+
+      const y = getRandomIntInclusive(1, 20 - x);
+
+      const x1 = getRandomIntInclusive(1, 20);
+
+      const y1 = getRandomIntInclusive(1, x1 - 1);
+
+      document.getElementById("item-1").innerHTML = "加法：" + `${x} + ${y} = `;
+
+      document.getElementById("item-2").innerHTML =
+        "减法：" + `${x1} - ${y1} = `;
+
+      document.getElementById("reload").innerHTML = "刷新题目";
+
+      document.getElementById("reload").onclick = function () {
+        location.reload();
+      };
+    </script>
+
+    <style>
+      .big {
+        font-size: 48px;
+      }
+    </style>
+  </body>
+</html>
