@@ -5,6 +5,7 @@
   </head>
   <body>
     <div>
+      <button id="reload">刷新题目</button>
       <ul id="math-list" style="list-style-type: none"></ul>
     </div>
 
@@ -34,6 +35,10 @@
 
         document.getElementById("math-list").appendChild(li);
       }
+
+      document.getElementById("reload").onclick = function () {
+        location.reload();
+      };
     </script>
 
     <style>
@@ -44,11 +49,18 @@
 
       div {
         display: flex;
+        flex-direction: column;
         margin-left: 100px;
+      }
+
+      button {
+        font-size: 36px;
+        width: fit-content;
       }
 
       ul {
         text-align: left;
+        padding: 0px;
       }
     </style>
   </body>
